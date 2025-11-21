@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Get game state",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Join game",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "join",
+        "playerId": "test123",
+        "nickname": "TestPlayer",
+        "color": "#ff0000"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "playerId": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
